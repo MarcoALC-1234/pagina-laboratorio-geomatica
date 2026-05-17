@@ -16,20 +16,31 @@ function showScreen(index){
             screen.classList.add("active");
         }
     });
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 function nextScreen(){
     if(currentScreen < screens.length - 1){
         currentScreen++;
-        showScreen(currentScreen);
+    }else{
+        currentScreen = 0;
     }
+
+    showScreen(currentScreen);
 }
 
 function prevScreen(){
     if(currentScreen > 0){
         currentScreen--;
-        showScreen(currentScreen);
+    }else{
+        currentScreen = screens.length - 1;
     }
+
+    showScreen(currentScreen);
 }
 
 if(nextButton && prevButton && screens.length > 0){
@@ -38,7 +49,6 @@ if(nextButton && prevButton && screens.length > 0){
     prevButton.addEventListener("click", prevScreen);
 
     document.addEventListener("dblclick", function(event){
-
         const middle = window.innerWidth / 2;
 
         if(event.clientX > middle){

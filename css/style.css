@@ -327,7 +327,8 @@ body{
 
     display: flex;
     justify-content: center;
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: 32px;
 
     padding: 28px;
 }
@@ -510,7 +511,8 @@ body{
 
     display: flex;
     justify-content: center;
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: 32px;
 
     padding: 28px;
 }
@@ -1376,4 +1378,447 @@ body{
         padding: 30px;
     }
 
+}
+
+/* ========================= */
+/* CURSOS */
+/* ========================= */
+
+.cursos-page{
+    min-height: 100vh;
+    overflow-y: auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 61, 43, 0.94),
+            rgba(0, 61, 43, 0.72),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../images/Laboratorio2.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
+}
+
+.cursos-main{
+    width: min(1250px, 92%);
+    margin: 40px auto 80px;
+
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.cursos-left{
+    position: sticky;
+    top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+.cursos-left img{
+    width: 100%;
+    max-width: 380px;
+
+    filter: drop-shadow(0 0 20px rgba(159, 211, 111, 0.35));
+
+    transition: 0.4s ease;
+}
+
+.cursos-left img:hover{
+    transform: scale(1.03);
+}
+
+.cursos-left h1{
+    text-align: center;
+    font-size: 34px;
+    color: #9fd36f;
+}
+
+.cursos-left p{
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e6f2e6;
+    max-width: 360px;
+}
+
+.cursos-right{
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.course-card{
+    padding: 34px;
+
+    border-radius: 26px;
+
+    background: rgba(255, 255, 255, 0.9);
+    color: #0b2f24;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.22);
+    backdrop-filter: blur(10px);
+
+    border-left: 7px solid #9fd36f;
+
+    transition: 0.35s ease;
+}
+
+.course-card:hover{
+    transform: translateY(-6px);
+    border-left-color: #d7b56d;
+    box-shadow: 0 20px 48px rgba(0,0,0,0.28);
+}
+
+.course-card .course-tag{
+    display: inline-block;
+
+    padding: 6px 16px;
+    margin-bottom: 14px;
+
+    border-radius: 30px;
+
+    background: rgba(0, 107, 75, 0.12);
+    color: #006b4b;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.course-card.reference .course-tag{
+    background: rgba(215, 181, 109, 0.18);
+    color: #a3812e;
+}
+
+.course-card h2{
+    font-size: 27px;
+    color: #006b4b;
+    margin-bottom: 14px;
+}
+
+.course-card p{
+    font-size: 16.5px;
+    line-height: 1.75;
+    margin-bottom: 22px;
+}
+
+.course-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 26px;
+
+    border-radius: 30px;
+
+    background: #006b4b;
+    color: white;
+
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 15px;
+
+    transition: 0.3s ease;
+}
+
+.course-link:hover{
+    background: #9fd36f;
+    color: #003d2b;
+    transform: translateX(4px);
+}
+
+@media(max-width: 900px){
+
+    .cursos-main{
+        grid-template-columns: 1fr;
+    }
+
+    .cursos-left{
+        position: relative;
+        top: 0;
+    }
+
+    .course-card{
+        padding: 26px;
+    }
+
+}
+
+/* ========================= */
+/* ORGANIGRAMA */
+/* ========================= */
+
+.organigrama-page{
+    min-height: 100vh;
+    overflow-y: auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 61, 43, 0.94),
+            rgba(0, 61, 43, 0.72),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../images/Laboratorio2.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
+}
+
+.organigrama-header{
+    width: min(950px, 92%);
+    margin: 55px auto 10px;
+    text-align: center;
+}
+
+.organigrama-header h1{
+    font-size: clamp(38px, 5.5vw, 60px);
+    color: #9fd36f;
+    margin-bottom: 14px;
+}
+
+.organigrama-header p{
+    font-size: 18px;
+    line-height: 1.6;
+    color: #e6f2e6;
+}
+
+.org-tree{
+    width: min(1150px, 94%);
+    margin: 50px auto 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tree-connector{
+    width: 3px;
+    height: 46px;
+
+    background: linear-gradient(to bottom, #9fd36f, #d7b56d);
+    border-radius: 4px;
+}
+
+.node-card{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding: 30px 32px;
+    min-width: 260px;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.92);
+    color: #0b2f24;
+
+    box-shadow: 0 16px 38px rgba(0,0,0,0.28);
+    backdrop-filter: blur(10px);
+
+    transition: 0.35s ease;
+}
+
+.node-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 22px 48px rgba(0,0,0,0.34);
+}
+
+.node-badge{
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+
+    color: white;
+
+    margin-bottom: 16px;
+
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.node-role{
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #006b4b;
+    margin-bottom: 8px;
+}
+
+.node-name{
+    display: block;
+    font-size: 21px;
+    font-weight: bold;
+    color: #0b2f24;
+}
+
+.node-card.coordinador{
+    border: 2px solid #d7b56d;
+    min-width: 320px;
+}
+
+.node-card.coordinador .node-badge{
+    background: linear-gradient(135deg, #d7b56d, #b8934a);
+}
+
+.node-card.asistente{
+    border: 2px solid #9fd36f;
+}
+
+.node-card.asistente .node-badge{
+    background: linear-gradient(135deg, #006b4b, #00885f);
+}
+
+.node-card.equipo{
+    min-width: 220px;
+    padding: 24px 22px;
+}
+
+.node-card.equipo .node-badge{
+    width: 46px;
+    height: 46px;
+    font-size: 13px;
+    background: linear-gradient(135deg, #6fbf73, #9fd36f);
+    color: #003d2b;
+}
+
+.node-card.equipo .node-name{
+    font-size: 18px;
+}
+
+.tree-children{
+    position: relative;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    padding-top: 46px;
+}
+
+.tree-children::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 14%;
+    right: 14%;
+    height: 3px;
+
+    background: linear-gradient(to right, transparent, #9fd36f 12%, #9fd36f 88%, transparent);
+    border-radius: 4px;
+}
+
+.tree-node-wrap{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.tree-node-wrap::before{
+    content: "";
+    position: absolute;
+    top: -46px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 46px;
+
+    background: #9fd36f;
+    border-radius: 4px;
+}
+
+.org-legend{
+    width: min(950px, 92%);
+    margin: 0 auto 70px;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 28px;
+
+    font-size: 14px;
+    color: #e6f2e6;
+}
+
+.org-legend span{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legend-dot{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legend-dot.gold{
+    background: linear-gradient(135deg, #d7b56d, #b8934a);
+}
+
+.legend-dot.teal{
+    background: linear-gradient(135deg, #006b4b, #00885f);
+}
+
+.legend-dot.light{
+    background: linear-gradient(135deg, #6fbf73, #9fd36f);
+}
+
+@media(max-width: 768px){
+
+    .organigrama-header{
+        margin: 40px auto 5px;
+    }
+
+    .node-card{
+        min-width: 220px;
+        padding: 24px 20px;
+    }
+
+    .node-card.coordinador{
+        min-width: 260px;
+    }
+
+    .tree-children{
+        gap: 44px 22px;
+    }
+
+    .tree-children::before{
+        left: 8%;
+        right: 8%;
+    }
+
+    .org-legend{
+        gap: 18px;
+    }
 }
